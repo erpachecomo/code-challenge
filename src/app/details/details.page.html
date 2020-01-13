@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{details.description}} details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col><b>Nutrient name</b></ion-col>
+      <ion-col><b>Amount</b></ion-col>
+      <ion-col><b>Unit</b></ion-col>
+    </ion-row>
+    <ion-list *ngFor="let nutrient of details.foodNutrients ? details.foodNutrients : []">
+      <ion-row>
+        <ion-col>
+          {{nutrient.nutrient.name}}
+        </ion-col>
+        <ion-col>
+          {{nutrient.amount}}
+        </ion-col>
+        <ion-col>
+          {{nutrient.nutrient.unitName}}
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
+</ion-content>
